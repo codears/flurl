@@ -3,3 +3,11 @@
 ################################################################################
 
 /.vs
+/ConsumerTest/bin/Debug
+/ConsumerTest/obj/Debug
+/Consumidor/.vs/Consumidor
+/Consumidor/bin/Debug/netstandard2.0
+/Consumidor/obj
+/DemoSite/obj/Debug
+/Principal/bin/Debug
+/Principal/obj/Debug

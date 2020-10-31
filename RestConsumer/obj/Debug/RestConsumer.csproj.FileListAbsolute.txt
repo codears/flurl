@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\RestConsumer.dll
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\RestConsumer.pdb
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\Flurl.dll
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\Flurl.Http.dll
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\Flurl.xml
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\Flurl.Http.xml
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\obj\Debug\RestConsumer.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\obj\Debug\RestConsumer.csproj.CopyComplete
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\obj\Debug\RestConsumer.dll
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\obj\Debug\RestConsumer.pdb
+C:\Users\Admin\source\repos\DemoSite\RestConsumer\obj\Debug\RestConsumer.csprojAssemblyReference.cache
