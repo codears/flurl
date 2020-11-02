@@ -2,13 +2,12 @@
 
 namespace RestConsumer
 {
-    public class Deck
+    public class Deck 
     {
         public string Success { get; set; }
         public string Deck_id { get; set; }
         public string Remaining { get; set; }
         public string Shuffled { get; set; }  
-        public Card[] Cards { get; set; }
-        public List<Card> cards { get; set; } = new List<Card>();
+        public List<Card> Cards { get; set; } = new List<Card>();
     }
 }

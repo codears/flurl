@@ -1,30 +1,48 @@
 ﻿using RestConsumer;
 using System;
-using System.Linq;
 
 namespace Principal
 {
     class Program
     {
         static string _deckId;
-        static FiltroDeck filtroDeck;
+        static FiltroDeck _filtroDeck;
 
         static void Main(string[] args)
         {
-            filtroDeck = new FiltroDeck();
+            _filtroDeck = new FiltroDeck();
             CriarBaralho();
+            CriarBaralhoPost();
             PegarCarta();
             Console.ReadLine();
+        }
+
+        private static async void CriarBaralhoPost()
+        {
+            try
+            {
+                var consumidor = new ApiConsumer<Deck>();
+                var baralho = await consumidor.PostAsync("deck/new", new { jokers_enabled = true });
+                Console.WriteLine($"Id: { baralho.Deck_id }");
+                Console.WriteLine();
+                _deckId = baralho.Deck_id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private static void CriarBaralho()
         {
             try
             {
+                _filtroDeck.deck_count = 2;
                 var consumidor = new ApiConsumer<Deck>();
-                var resposta = consumidor.GetAsync("deck/new/shuffle/", filtroDeck).Result;
-                Console.WriteLine(resposta.Deck_id);
-                _deckId = resposta.Deck_id;
+                var baralho = consumidor.GetAsync("deck/new/shuffle/", _filtroDeck).Result;
+                Console.WriteLine($"Id: { baralho.Deck_id }");
+                Console.WriteLine();
+                _deckId = baralho.Deck_id;
             }
             catch (Exception ex)
             {
@@ -37,17 +55,18 @@ namespace Principal
             try
             {
                 var consumidor = new ApiConsumer<Deck>();
-                filtroDeck.deck_count = -1;
-                var resposta = consumidor.GetAsync("deck", new { count = 1 }, _deckId, "draw").Result;
-                var carta = resposta.cards.FirstOrDefault();
-
-                Console.WriteLine($"{ carta.Value } of { carta.Suit }");
+                _filtroDeck.deck_count = -1;
+                _filtroDeck.count = 1;
+                var resposta = consumidor.GetAsync("deck", _filtroDeck, _deckId, "draw").Result;
+                foreach (var carta in resposta.Cards)
+                {
+                    Console.WriteLine($"{ carta.Value } of { carta.Suit }");
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
     }
 }

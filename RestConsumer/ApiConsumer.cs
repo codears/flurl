@@ -28,12 +28,14 @@ namespace RestConsumer
             }
         }
 
-        public async Task PostAsync(string sufixo, object parametro)
+        public async Task<TResposta> PostAsync(string sufixo, object parametro)
         {
             try
             {
                 var url = MontarUrl(parametro, sufixo);
-                var resposta = await url.PostJsonAsync(parametro);
+                var tResposta =  await url.PostJsonAsync(parametro).ReceiveJson<TResposta>();
+                
+                return tResposta;
             }
             catch (Exception ex)
             {
